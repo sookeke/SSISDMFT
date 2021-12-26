@@ -32,7 +32,7 @@ steps:
     outputPath: '$(Build.ArtifactStagingDirectory)'
 - task: SSISDeploy@1
   inputs:
-    sourcePath: '$(Build.ArtifactStagingDirectory)/Integration Services Project5\Integration Services Project5\bin\Development\Integration Services Project5.ispac'
+    sourcePath: '$(Build.ArtifactStagingDirectory)/Development\Integration Services Project5.ispac'
     destinationType: 'ssisdb'
     destinationServer: 'localhost\MSSQLSERVER01'
     destinationPath: '/SSISDB/Cix'
