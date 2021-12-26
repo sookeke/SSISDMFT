@@ -30,3 +30,12 @@ steps:
     projectPath: './Integration Services Project5/'
     stripSensitive: true
     outputPath: '$(Build.ArtifactStagingDirectory)'
+- task: SSISDeploy@1
+  inputs:
+    sourcePath: '''\Integration Services Project5\bin\Development\Integration Services Project5.ispac'''
+    destinationType: 'ssisdb'
+    destinationServer: 'localhost\MSSQLSERVER01'
+    destinationPath: '/SSISDB/Cix'
+    authType: 'win'
+    whetherOverwrite: 'yes'
+    whetherContinue: 'no'
