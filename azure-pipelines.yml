@@ -15,7 +15,6 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
-- task: NuGetToolInstaller@1
 - task: PowerShell@2
   displayName: Install dependencies
   inputs:
@@ -30,9 +29,16 @@ steps:
       Invoke-WebRequest -Uri "http://aka.ms/SSISDevOpsTools" -OutFile SSIS.exe
        Write-Host "Download complete"
       #install download package
-      .\SSIS.exe /Q /C /T:'D:\a\1\a\SSIS\SSIS'
+      .\SSIS.exe /Q /C /T:D:\a\1\a\SSIS\SSIS
       ls
-
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: |
+      # Write your PowerShell commands here.
+      
+      cd D:\a\1\a\SSIS\SSIS
+      ls
 - task: SSISBuild@1
   inputs:
     projectPath: './Integration Services Project5/'
