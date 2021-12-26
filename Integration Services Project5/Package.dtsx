@@ -1,0 +1,1449 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/22/2021 2:57:14 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="NE021523"
+  DTS:CreatorName="IDIR\SOOKEKE"
+  DTS:DTSID="{9569B92F-4547-4970-B2E0-ABF2C28EFD10}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.170"
+  DTS:LocaleID="4105"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="23"
+  DTS:VersionGUID="{2B92A733-0344-41C4-9C72-A2D563D0AC9F}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[(DESCRIPTION=(ADDRESS = (PROTOCOL = TCP)(HOST = kangaroo.th.gov.bc.ca)(PORT = 20208))(CONNECT_DATA = (SERVICE_NAME=DBA03))).APP_CIX_MASKED]"
+      DTS:CreationName="ADO.NET:System.Data.OracleClient.OracleConnection, System.Data.OracleClient, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{6012270B-0A39-4239-A48B-C7EF4002A7E9}"
+      DTS:ObjectName="(DESCRIPTION=(ADDRESS = (PROTOCOL = TCP)(HOST = kangaroo.th.gov.bc.ca)(PORT = 20208))(CONNECT_DATA = (SERVICE_NAME=DBA03))).APP_CIX_MASKED">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=&quot;(DESCRIPTION=(ADDRESS = (PROTOCOL = TCP)(HOST = kangaroo.th.gov.bc.ca)(PORT = 20208))(CONNECT_DATA = (SERVICE_NAME=DBA03)))&quot;;User ID=APP_CIX_MASKED;Unicode=True;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAj9wIYc2yR02dmvfDghtnOgAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAC2dUPReyw+ebAFwWwSFmk5AAAAAASAAACgAAAAEAAAAJ8kSwW9tPpjgtQzSvhLTM0YAAAA9gh5mo7DrqwG3IPL2sX4IMH3bG+8wjDvFAAAAGGD1gmlDiYzn7lYfP56hiZoHp9Y</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[(localdb)\MSSQLLocalDB.master]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{0CC93186-76D4-41ED-B9D3-CCB3B1BCF2D0}"
+      DTS:ObjectName="(localdb)\MSSQLLocalDB.master">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=master;Integrated Security=True;Application Name=SSIS-Package-{0CC93186-76D4-41ED-B9D3-CCB3B1BCF2D0}(localdb)\MSSQLLocalDB.master;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost\MSSQLSERVER01.CIX]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{51C1FBC6-7C58-4DCA-B08D-503007347C8F}"
+      DTS:ObjectName="localhost\MSSQLSERVER01.CIX">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=localhost\MSSQLSERVER01;Initial Catalog=CIX;Integrated Security=True;Application Name=SSIS-Package-{51C1FBC6-7C58-4DCA-B08D-503007347C8F}localhost\MSSQLSERVER01.CIX;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[log.txt]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{BA598959-E1DD-4E86-84C1-F6961AC07E3F}"
+      DTS:ObjectName="log.txt">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:FileUsageType="1"
+          DTS:ConnectionString="C:\Users\sookeke\source\repos\Integration Services Project5\Integration Services Project5\log.txt" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[sample.xml]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{A67CBA15-188B-4830-9476-9B77714B9E27}"
+      DTS:ObjectName="sample.xml">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:FileUsageType="1"
+          DTS:ConnectionString="sample.xml" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[sample.xml 1]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{59EB6AEE-E5E0-4C82-9448-AECFF65AFC74}"
+      DTS:ObjectName="sample.xml 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:FileUsageType="1"
+          DTS:ConnectionString="C:\Users\sookeke\source\repos\Integration Services Project5\Integration Services Project5\sample.xml" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:LogProviders>
+    <DTS:LogProvider
+      DTS:ConfigString="log.txt"
+      DTS:CreationName="Microsoft.LogProviderTextFile"
+      DTS:Description="Writes log entries for events to a CSV file"
+      DTS:DTSID="{92602AE7-E950-4DC2-9E8F-B1A1BFAA67CF}"
+      DTS:ObjectName="SSIS log provider for Text files2">
+      <DTS:ObjectData>
+        <InnerObject />
+      </DTS:ObjectData>
+    </DTS:LogProvider>
+  </DTS:LogProviders>
+  <DTS:Variables />
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">5,7,OnError,13,OnInformation,13,OnPostExecute,10,OnProgress,12,OnTaskFailed</DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnError"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnInformation"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnProgress"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnTaskFailed"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:SelectedLogProviders>
+      <DTS:SelectedLogProvider
+        DTS:InstanceID="{92602AE7-E950-4DC2-9E8F-B1A1BFAA67CF}" />
+    </DTS:SelectedLogProviders>
+  </DTS:LoggingOptions>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{A3C1212D-2174-4E6A-9B38-31C827514178}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task\Data Anonymizer"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="KingswaySoft Inc.; http://www.kingswaysoft.com; support@kingswaysoft.com; Copyright (c) 2021 KingswaySoft Inc."
+              description="Anonymizes data."
+              name="Data Anonymizer"
+              usesDispositions="true"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">KingswaySoft.IntegrationToolkit.ProductivityPack.DataAnonymizerComponent</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Data Anonymizer.Inputs[Primary Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Primary Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Data Anonymizer.Outputs[Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Error Output"
+                  synchronousInputId="Package\Data Flow Task\Data Anonymizer.Inputs[Primary Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Data Anonymizer.Outputs[Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Data Anonymizer.Outputs[Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Data Anonymizer.Outputs[Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Data Anonymizer.Outputs[Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Data Anonymizer.Outputs[Error Output].Columns[ErrorMessage]"
+                      dataType="wstr"
+                      length="2048"
+                      lineageId="Package\Data Flow Task\Data Anonymizer.Outputs[Error Output].Columns[ErrorMessage]"
+                      name="ErrorMessage" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Data Anonymizer.Outputs[Default Output]"
+                  exclusionGroup="1"
+                  name="Default Output"
+                  synchronousInputId="Package\Data Flow Task\Data Anonymizer.Inputs[Primary Input]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Premium ADO NET Destination"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="KingswaySoft Inc.; http://www.kingswaysoft.com; support@kingswaysoft.com; Copyright (c) 2021 KingswaySoft Inc."
+              description="Insert, Update, Upsert, and Delete data over an ADO.NET connection."
+              name="Premium ADO NET Destination"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  expressionType="Notify"
+                  name="DestinationTable">dbo.cix_vehicle</property>
+                <property
+                  dataType="System.Int32"
+                  expressionType="Notify"
+                  name="Action"
+                  typeConverter="KingswaySoft.IntegrationToolkit.ProductivityPack.PremiumAdoDotNetDestinationAction">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="WriteMode"
+                  expressionType="Notify"
+                  name="WriteMode"
+                  typeConverter="KingswaySoft.IntegrationToolkit.ProductivityPack.PremiumAdoDotNetDestinationWriteMode">2</property>
+                <property
+                  dataType="System.Int32"
+                  expressionType="Notify"
+                  name="CommandTimeout">120</property>
+                <property
+                  dataType="System.Int32"
+                  description="BatchSize"
+                  expressionType="Notify"
+                  name="BatchSize">100</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how to handle duplicates in the temp table before merging. Only applies to non INSERT bulk operations."
+                  expressionType="Notify"
+                  name="DuplicateHandling"
+                  typeConverter="KingswaySoft.IntegrationToolkit.ProductivityPack.PremiumAdoDotNetDestinationDuplicateHandling">0</property>
+                <property
+                  dataType="System.Boolean"
+                  expressionType="Notify"
+                  name="FirstMatchOnly">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="When enabled, will not overwrite existing values with NULL values during update/upsert operations."
+                  expressionType="Notify"
+                  name="PreventNullOverwrites">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="TransactionType"
+                  expressionType="Notify"
+                  name="TransactionType"
+                  typeConverter="KingswaySoft.IntegrationToolkit.ProductivityPack.PremiumAdoDotNetTransactionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  expressionType="Notify"
+                  name="TransactionIsolationLevel"
+                  typeConverter="KingswaySoft.IntegrationToolkit.ProductivityPack.PremiumAdoDotNetTransactionIsolationLevel">0</property>
+                <property
+                  dataType="System.String"
+                  expressionType="Notify"
+                  name="PreCommand"></property>
+                <property
+                  dataType="System.String"
+                  expressionType="Notify"
+                  name="PostCommand"></property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">KingswaySoft.IntegrationToolkit.ProductivityPack.AdoDotNetDestinationComponent</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Premium ADO NET Destination.Connections[ADO NET]"
+                  connectionManagerID="Package.ConnectionManagers[localhost\MSSQLSERVER01.CIX]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost\MSSQLSERVER01.CIX]"
+                  description="ADO.NET"
+                  name="ADO NET" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Premium ADO NET Destination.Inputs[Primary Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Primary Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Premium ADO NET Destination.Inputs[Primary Input].Columns[ACCIDENT_SUBMISSION_ID]"
+                      cachedDataType="numeric"
+                      cachedName="ACCIDENT_SUBMISSION_ID"
+                      cachedPrecision="38"
+                      externalMetadataColumnId="Package\Data Flow Task\Premium ADO NET Destination.Inputs[Primary Input].ExternalColumns[ACCIDENT_SUBMISSION_ID]"
+                      lineageId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].Columns[ACCIDENT_SUBMISSION_ID]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Premium ADO NET Destination.Inputs[Primary Input].Columns[CHECKSUM]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="32"
+                      cachedName="CHECKSUM"
+                      externalMetadataColumnId="Package\Data Flow Task\Premium ADO NET Destination.Inputs[Primary Input].ExternalColumns[CHECKSUM]"
+                      lineageId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].Columns[CHECKSUM]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Premium ADO NET Destination.Inputs[Primary Input].Columns[CONCURRENCY_CONTROL_NUMBER]"
+                      cachedDataType="numeric"
+                      cachedName="CONCURRENCY_CONTROL_NUMBER"
+                      cachedPrecision="38"
+                      externalMetadataColumnId="Package\Data Flow Task\Premium ADO NET Destination.Inputs[Primary Input].ExternalColumns[CONCURRENCY_CONTROL_NUMBER]"
+                      lineageId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].Columns[CONCURRENCY_CONTROL_NUMBER]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Premium ADO NET Destination.Inputs[Primary Input].Columns[DB_AUDIT_CREATE_TIMESTAMP]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="DB_AUDIT_CREATE_TIMESTAMP"
+                      externalMetadataColumnId="Package\Data Flow Task\Premium ADO NET Destination.Inputs[Primary Input].ExternalColumns[DB_AUDIT_CREATE_TIMESTAMP]"
+                      lineageId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].Columns[DB_AUDIT_CREATE_TIMESTAMP]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Premium ADO NET Destination.Inputs[Primary Input].Columns[DB_AUDIT_CREATE_USERID]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="DB_AUDIT_CREATE_USERID"
+                      externalMetadataColumnId="Package\Data Flow Task\Premium ADO NET Destination.Inputs[Primary Input].ExternalColumns[DB_AUDIT_CREATE_USERID]"
+                      lineageId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].Columns[DB_AUDIT_CREATE_USERID]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Premium ADO NET Destination.Inputs[Primary Input].Columns[DB_AUDIT_LAST_UPDATE_TIMESTAMP]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="DB_AUDIT_LAST_UPDATE_TIMESTAMP"
+                      externalMetadataColumnId="Package\Data Flow Task\Premium ADO NET Destination.Inputs[Primary Input].ExternalColumns[DB_AUDIT_LAST_UPDATE_TIMESTAMP]"
+                      lineageId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].Columns[DB_AUDIT_LAST_UPDATE_TIMESTAMP]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Premium ADO NET Destination.Inputs[Primary Input].Columns[DB_AUDIT_LAST_UPDATE_USERID]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="DB_AUDIT_LAST_UPDATE_USERID"
+                      externalMetadataColumnId="Package\Data Flow Task\Premium ADO NET Destination.Inputs[Primary Input].ExternalColumns[DB_AUDIT_LAST_UPDATE_USERID]"
+                      lineageId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].Columns[DB_AUDIT_LAST_UPDATE_USERID]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Premium ADO NET Destination.Inputs[Primary Input].Columns[FILE_READ_DATE]"
+                      cachedDataType="date"
+                      cachedName="FILE_READ_DATE"
+                      externalMetadataColumnId="Package\Data Flow Task\Premium ADO NET Destination.Inputs[Primary Input].ExternalColumns[FILE_READ_DATE]"
+                      lineageId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].Columns[FILE_READ_DATE]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Premium ADO NET Destination.Inputs[Primary Input].Columns[FILENAME]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="FILENAME"
+                      externalMetadataColumnId="Package\Data Flow Task\Premium ADO NET Destination.Inputs[Primary Input].ExternalColumns[FILENAME]"
+                      lineageId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].Columns[FILENAME]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Premium ADO NET Destination.Inputs[Primary Input].Columns[TRK_CREATE_TIMESTAMP]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="TRK_CREATE_TIMESTAMP"
+                      externalMetadataColumnId="Package\Data Flow Task\Premium ADO NET Destination.Inputs[Primary Input].ExternalColumns[TRK_CREATE_TIMESTAMP]"
+                      lineageId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].Columns[TRK_CREATE_TIMESTAMP]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Premium ADO NET Destination.Inputs[Primary Input].Columns[TRK_CREATE_USER_DIRECTORY]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="6"
+                      cachedName="TRK_CREATE_USER_DIRECTORY"
+                      externalMetadataColumnId="Package\Data Flow Task\Premium ADO NET Destination.Inputs[Primary Input].ExternalColumns[TRK_CREATE_USER_DIRECTORY]"
+                      lineageId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].Columns[TRK_CREATE_USER_DIRECTORY]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Premium ADO NET Destination.Inputs[Primary Input].Columns[TRK_CREATE_USER_GUID]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="32"
+                      cachedName="TRK_CREATE_USER_GUID"
+                      externalMetadataColumnId="Package\Data Flow Task\Premium ADO NET Destination.Inputs[Primary Input].ExternalColumns[TRK_CREATE_USER_GUID]"
+                      lineageId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].Columns[TRK_CREATE_USER_GUID]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Premium ADO NET Destination.Inputs[Primary Input].Columns[TRK_CREATE_USERID]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="TRK_CREATE_USERID"
+                      externalMetadataColumnId="Package\Data Flow Task\Premium ADO NET Destination.Inputs[Primary Input].ExternalColumns[TRK_CREATE_USERID]"
+                      lineageId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].Columns[TRK_CREATE_USERID]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Premium ADO NET Destination.Inputs[Primary Input].Columns[TRK_LAST_UPDATE_TIMESTAMP]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="TRK_LAST_UPDATE_TIMESTAMP"
+                      externalMetadataColumnId="Package\Data Flow Task\Premium ADO NET Destination.Inputs[Primary Input].ExternalColumns[TRK_LAST_UPDATE_TIMESTAMP]"
+                      lineageId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].Columns[TRK_LAST_UPDATE_TIMESTAMP]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Premium ADO NET Destination.Inputs[Primary Input].Columns[TRK_LAST_UPDATE_USER_DIRECTORY]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="6"
+                      cachedName="TRK_LAST_UPDATE_USER_DIRECTORY"
+                      externalMetadataColumnId="Package\Data Flow Task\Premium ADO NET Destination.Inputs[Primary Input].ExternalColumns[TRK_LAST_UPDATE_USER_DIRECTORY]"
+                      lineageId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].Columns[TRK_LAST_UPDATE_USER_DIRECTORY]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Premium ADO NET Destination.Inputs[Primary Input].Columns[TRK_LAST_UPDATE_USER_GUID]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="32"
+                      cachedName="TRK_LAST_UPDATE_USER_GUID"
+                      externalMetadataColumnId="Package\Data Flow Task\Premium ADO NET Destination.Inputs[Primary Input].ExternalColumns[TRK_LAST_UPDATE_USER_GUID]"
+                      lineageId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].Columns[TRK_LAST_UPDATE_USER_GUID]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Premium ADO NET Destination.Inputs[Primary Input].Columns[TRK_LAST_UPDATE_USERID]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="TRK_LAST_UPDATE_USERID"
+                      externalMetadataColumnId="Package\Data Flow Task\Premium ADO NET Destination.Inputs[Primary Input].ExternalColumns[TRK_LAST_UPDATE_USERID]"
+                      lineageId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].Columns[TRK_LAST_UPDATE_USERID]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Premium ADO NET Destination.Inputs[Primary Input].ExternalColumns[ACCIDENT_SUBMISSION_ID]"
+                      dataType="numeric"
+                      name="ACCIDENT_SUBMISSION_ID"
+                      precision="38">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsConditionalField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="IsIdentityField"
+                          name="IsIdentityField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="CanBeConditionalField">true</property>
+                        <property
+                          dataType="System.Null"
+                          name="Tags" />
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Premium ADO NET Destination.Inputs[Primary Input].ExternalColumns[CHECKSUM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="32"
+                      name="CHECKSUM">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsConditionalField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="IsIdentityField"
+                          name="IsIdentityField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="CanBeConditionalField">true</property>
+                        <property
+                          dataType="System.Null"
+                          name="Tags" />
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Premium ADO NET Destination.Inputs[Primary Input].ExternalColumns[CONCURRENCY_CONTROL_NUMBER]"
+                      dataType="numeric"
+                      name="CONCURRENCY_CONTROL_NUMBER"
+                      precision="38">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsConditionalField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="IsIdentityField"
+                          name="IsIdentityField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="CanBeConditionalField">true</property>
+                        <property
+                          dataType="System.Null"
+                          name="Tags" />
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Premium ADO NET Destination.Inputs[Primary Input].ExternalColumns[DB_AUDIT_CREATE_TIMESTAMP]"
+                      dataType="dbTimeStamp"
+                      name="DB_AUDIT_CREATE_TIMESTAMP">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsConditionalField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="IsIdentityField"
+                          name="IsIdentityField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="CanBeConditionalField">true</property>
+                        <property
+                          dataType="System.Null"
+                          name="Tags" />
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Premium ADO NET Destination.Inputs[Primary Input].ExternalColumns[DB_AUDIT_CREATE_USERID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="DB_AUDIT_CREATE_USERID">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsConditionalField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="IsIdentityField"
+                          name="IsIdentityField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="CanBeConditionalField">true</property>
+                        <property
+                          dataType="System.Null"
+                          name="Tags" />
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Premium ADO NET Destination.Inputs[Primary Input].ExternalColumns[DB_AUDIT_LAST_UPDATE_TIMESTAMP]"
+                      dataType="dbTimeStamp"
+                      name="DB_AUDIT_LAST_UPDATE_TIMESTAMP">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsConditionalField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="IsIdentityField"
+                          name="IsIdentityField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="CanBeConditionalField">true</property>
+                        <property
+                          dataType="System.Null"
+                          name="Tags" />
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Premium ADO NET Destination.Inputs[Primary Input].ExternalColumns[DB_AUDIT_LAST_UPDATE_USERID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="DB_AUDIT_LAST_UPDATE_USERID">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsConditionalField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="IsIdentityField"
+                          name="IsIdentityField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="CanBeConditionalField">true</property>
+                        <property
+                          dataType="System.Null"
+                          name="Tags" />
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Premium ADO NET Destination.Inputs[Primary Input].ExternalColumns[FILE_READ_DATE]"
+                      dataType="dbTimeStamp"
+                      name="FILE_READ_DATE">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsConditionalField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="IsIdentityField"
+                          name="IsIdentityField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="CanBeConditionalField">true</property>
+                        <property
+                          dataType="System.Null"
+                          name="Tags" />
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Premium ADO NET Destination.Inputs[Primary Input].ExternalColumns[FILENAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="FILENAME">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsConditionalField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="IsIdentityField"
+                          name="IsIdentityField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="CanBeConditionalField">true</property>
+                        <property
+                          dataType="System.Null"
+                          name="Tags" />
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Premium ADO NET Destination.Inputs[Primary Input].ExternalColumns[TRK_CREATE_TIMESTAMP]"
+                      dataType="dbTimeStamp"
+                      name="TRK_CREATE_TIMESTAMP">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsConditionalField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="IsIdentityField"
+                          name="IsIdentityField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="CanBeConditionalField">true</property>
+                        <property
+                          dataType="System.Null"
+                          name="Tags" />
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Premium ADO NET Destination.Inputs[Primary Input].ExternalColumns[TRK_CREATE_USER_DIRECTORY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="6"
+                      name="TRK_CREATE_USER_DIRECTORY">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsConditionalField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="IsIdentityField"
+                          name="IsIdentityField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="CanBeConditionalField">true</property>
+                        <property
+                          dataType="System.Null"
+                          name="Tags" />
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Premium ADO NET Destination.Inputs[Primary Input].ExternalColumns[TRK_CREATE_USER_GUID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="32"
+                      name="TRK_CREATE_USER_GUID">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsConditionalField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="IsIdentityField"
+                          name="IsIdentityField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="CanBeConditionalField">true</property>
+                        <property
+                          dataType="System.Null"
+                          name="Tags" />
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Premium ADO NET Destination.Inputs[Primary Input].ExternalColumns[TRK_CREATE_USERID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="TRK_CREATE_USERID">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsConditionalField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="IsIdentityField"
+                          name="IsIdentityField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="CanBeConditionalField">true</property>
+                        <property
+                          dataType="System.Null"
+                          name="Tags" />
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Premium ADO NET Destination.Inputs[Primary Input].ExternalColumns[TRK_LAST_UPDATE_TIMESTAMP]"
+                      dataType="dbTimeStamp"
+                      name="TRK_LAST_UPDATE_TIMESTAMP">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsConditionalField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="IsIdentityField"
+                          name="IsIdentityField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="CanBeConditionalField">true</property>
+                        <property
+                          dataType="System.Null"
+                          name="Tags" />
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Premium ADO NET Destination.Inputs[Primary Input].ExternalColumns[TRK_LAST_UPDATE_USER_DIRECTORY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="6"
+                      name="TRK_LAST_UPDATE_USER_DIRECTORY">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsConditionalField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="IsIdentityField"
+                          name="IsIdentityField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="CanBeConditionalField">true</property>
+                        <property
+                          dataType="System.Null"
+                          name="Tags" />
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Premium ADO NET Destination.Inputs[Primary Input].ExternalColumns[TRK_LAST_UPDATE_USER_GUID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="32"
+                      name="TRK_LAST_UPDATE_USER_GUID">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsConditionalField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="IsIdentityField"
+                          name="IsIdentityField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="CanBeConditionalField">true</property>
+                        <property
+                          dataType="System.Null"
+                          name="Tags" />
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Premium ADO NET Destination.Inputs[Primary Input].ExternalColumns[TRK_LAST_UPDATE_USERID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="TRK_LAST_UPDATE_USERID">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsConditionalField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="IsIdentityField"
+                          name="IsIdentityField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="CanBeConditionalField">true</property>
+                        <property
+                          dataType="System.Null"
+                          name="Tags" />
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Premium ADO NET Destination.Outputs[Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Error Output"
+                  synchronousInputId="Package\Data Flow Task\Premium ADO NET Destination.Inputs[Primary Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Premium ADO NET Destination.Outputs[Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Premium ADO NET Destination.Outputs[Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Premium ADO NET Destination.Outputs[Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Premium ADO NET Destination.Outputs[Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Premium ADO NET Destination.Outputs[Error Output].Columns[ErrorMessage]"
+                      dataType="wstr"
+                      length="2048"
+                      lineageId="Package\Data Flow Task\Premium ADO NET Destination.Outputs[Error Output].Columns[ErrorMessage]"
+                      name="ErrorMessage" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Premium ADO NET Destination.Outputs[Default Output]"
+                  exclusionGroup="1"
+                  name="Default Output"
+                  synchronousInputId="Package\Data Flow Task\Premium ADO NET Destination.Inputs[Primary Input]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Premium ADO NET Source"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="KingswaySoft Inc.; http://www.kingswaysoft.com; support@kingswaysoft.com; Copyright (c) 2021 KingswaySoft Inc."
+              description="Read data from an ADO.NET connection."
+              name="Premium ADO NET Source"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  expressionType="Notify"
+                  name="DataSource">APP_CIX_MASKED.CIX_ACCIDENT_SUBMISSION</property>
+                <property
+                  dataType="System.String"
+                  expressionType="Notify"
+                  name="Command">SELECT "ACCIDENT_SUBMISSION_ID"
+      ,"CHECKSUM"
+      ,"CONCURRENCY_CONTROL_NUMBER"
+      ,"DB_AUDIT_CREATE_TIMESTAMP"
+      ,"DB_AUDIT_CREATE_USERID"
+      ,"DB_AUDIT_LAST_UPDATE_TIMESTAMP"
+      ,"DB_AUDIT_LAST_UPDATE_USERID"
+      ,"FILE_READ_DATE"
+      ,"FILENAME"
+      ,"TRK_CREATE_TIMESTAMP"
+      ,"TRK_CREATE_USER_DIRECTORY"
+      ,"TRK_CREATE_USER_GUID"
+      ,"TRK_CREATE_USERID"
+      ,"TRK_LAST_UPDATE_TIMESTAMP"
+      ,"TRK_LAST_UPDATE_USER_DIRECTORY"
+      ,"TRK_LAST_UPDATE_USER_GUID"
+      ,"TRK_LAST_UPDATE_USERID"
+FROM "APP_CIX_MASKED"."CIX_ACCIDENT_SUBMISSION"</property>
+                <property
+                  dataType="System.Int32"
+                  expressionType="Notify"
+                  name="CommandTimeout">120</property>
+                <property
+                  dataType="System.Boolean"
+                  expressionType="Notify"
+                  name="PrepareCommand">true</property>
+                <property
+                  dataType="System.String"
+                  expressionType="Notify"
+                  name="PreCommand"></property>
+                <property
+                  dataType="System.String"
+                  expressionType="Notify"
+                  name="PostCommand"></property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">KingswaySoft.IntegrationToolkit.ProductivityPack.AdoDotNetSourceComponent</property>
+                <property
+                  dataType="System.Int32"
+                  description="TransactionType"
+                  expressionType="Notify"
+                  name="TransactionType"
+                  typeConverter="KingswaySoft.IntegrationToolkit.ProductivityPack.PremiumAdoDotNetTransactionType">0</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Premium ADO NET Source.Connections[ADO NET]"
+                  connectionManagerID="Package.ConnectionManagers[(DESCRIPTION=(ADDRESS = (PROTOCOL = TCP)(HOST = kangaroo.th.gov.bc.ca)(PORT = 20208))(CONNECT_DATA = (SERVICE_NAME=DBA03))).APP_CIX_MASKED]"
+                  connectionManagerRefId="Package.ConnectionManagers[(DESCRIPTION=(ADDRESS = (PROTOCOL = TCP)(HOST = kangaroo.th.gov.bc.ca)(PORT = 20208))(CONNECT_DATA = (SERVICE_NAME=DBA03))).APP_CIX_MASKED]"
+                  description="ADO.NET"
+                  name="ADO NET" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output]"
+                  name="Default Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].Columns[ACCIDENT_SUBMISSION_ID]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].ExternalColumns[ACCIDENT_SUBMISSION_ID]"
+                      lineageId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].Columns[ACCIDENT_SUBMISSION_ID]"
+                      name="ACCIDENT_SUBMISSION_ID"
+                      precision="38"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].Columns[CHECKSUM]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].ExternalColumns[CHECKSUM]"
+                      length="32"
+                      lineageId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].Columns[CHECKSUM]"
+                      name="CHECKSUM"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].Columns[CONCURRENCY_CONTROL_NUMBER]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].ExternalColumns[CONCURRENCY_CONTROL_NUMBER]"
+                      lineageId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].Columns[CONCURRENCY_CONTROL_NUMBER]"
+                      name="CONCURRENCY_CONTROL_NUMBER"
+                      precision="38"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].Columns[DB_AUDIT_CREATE_TIMESTAMP]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].ExternalColumns[DB_AUDIT_CREATE_TIMESTAMP]"
+                      lineageId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].Columns[DB_AUDIT_CREATE_TIMESTAMP]"
+                      name="DB_AUDIT_CREATE_TIMESTAMP"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].Columns[DB_AUDIT_CREATE_USERID]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].ExternalColumns[DB_AUDIT_CREATE_USERID]"
+                      length="30"
+                      lineageId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].Columns[DB_AUDIT_CREATE_USERID]"
+                      name="DB_AUDIT_CREATE_USERID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].Columns[DB_AUDIT_LAST_UPDATE_TIMESTAMP]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].ExternalColumns[DB_AUDIT_LAST_UPDATE_TIMESTAMP]"
+                      lineageId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].Columns[DB_AUDIT_LAST_UPDATE_TIMESTAMP]"
+                      name="DB_AUDIT_LAST_UPDATE_TIMESTAMP"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].Columns[DB_AUDIT_LAST_UPDATE_USERID]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].ExternalColumns[DB_AUDIT_LAST_UPDATE_USERID]"
+                      length="30"
+                      lineageId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].Columns[DB_AUDIT_LAST_UPDATE_USERID]"
+                      name="DB_AUDIT_LAST_UPDATE_USERID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].Columns[FILE_READ_DATE]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].ExternalColumns[FILE_READ_DATE]"
+                      lineageId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].Columns[FILE_READ_DATE]"
+                      name="FILE_READ_DATE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].Columns[FILENAME]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].ExternalColumns[FILENAME]"
+                      length="100"
+                      lineageId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].Columns[FILENAME]"
+                      name="FILENAME"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].Columns[TRK_CREATE_TIMESTAMP]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].ExternalColumns[TRK_CREATE_TIMESTAMP]"
+                      lineageId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].Columns[TRK_CREATE_TIMESTAMP]"
+                      name="TRK_CREATE_TIMESTAMP"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].Columns[TRK_CREATE_USER_DIRECTORY]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].ExternalColumns[TRK_CREATE_USER_DIRECTORY]"
+                      length="6"
+                      lineageId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].Columns[TRK_CREATE_USER_DIRECTORY]"
+                      name="TRK_CREATE_USER_DIRECTORY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].Columns[TRK_CREATE_USER_GUID]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].ExternalColumns[TRK_CREATE_USER_GUID]"
+                      length="32"
+                      lineageId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].Columns[TRK_CREATE_USER_GUID]"
+                      name="TRK_CREATE_USER_GUID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].Columns[TRK_CREATE_USERID]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].ExternalColumns[TRK_CREATE_USERID]"
+                      length="30"
+                      lineageId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].Columns[TRK_CREATE_USERID]"
+                      name="TRK_CREATE_USERID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].Columns[TRK_LAST_UPDATE_TIMESTAMP]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].ExternalColumns[TRK_LAST_UPDATE_TIMESTAMP]"
+                      lineageId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].Columns[TRK_LAST_UPDATE_TIMESTAMP]"
+                      name="TRK_LAST_UPDATE_TIMESTAMP"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].Columns[TRK_LAST_UPDATE_USER_DIRECTORY]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].ExternalColumns[TRK_LAST_UPDATE_USER_DIRECTORY]"
+                      length="6"
+                      lineageId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].Columns[TRK_LAST_UPDATE_USER_DIRECTORY]"
+                      name="TRK_LAST_UPDATE_USER_DIRECTORY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].Columns[TRK_LAST_UPDATE_USER_GUID]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].ExternalColumns[TRK_LAST_UPDATE_USER_GUID]"
+                      length="32"
+                      lineageId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].Columns[TRK_LAST_UPDATE_USER_GUID]"
+                      name="TRK_LAST_UPDATE_USER_GUID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].Columns[TRK_LAST_UPDATE_USERID]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].ExternalColumns[TRK_LAST_UPDATE_USERID]"
+                      length="30"
+                      lineageId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].Columns[TRK_LAST_UPDATE_USERID]"
+                      name="TRK_LAST_UPDATE_USERID"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].ExternalColumns[ACCIDENT_SUBMISSION_ID]"
+                      dataType="numeric"
+                      name="ACCIDENT_SUBMISSION_ID"
+                      precision="38" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].ExternalColumns[CHECKSUM]"
+                      codePage="65001"
+                      dataType="str"
+                      length="32"
+                      name="CHECKSUM" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].ExternalColumns[CONCURRENCY_CONTROL_NUMBER]"
+                      dataType="numeric"
+                      name="CONCURRENCY_CONTROL_NUMBER"
+                      precision="38" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].ExternalColumns[DB_AUDIT_CREATE_TIMESTAMP]"
+                      dataType="dbTimeStamp"
+                      name="DB_AUDIT_CREATE_TIMESTAMP" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].ExternalColumns[DB_AUDIT_CREATE_USERID]"
+                      codePage="65001"
+                      dataType="str"
+                      length="30"
+                      name="DB_AUDIT_CREATE_USERID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].ExternalColumns[DB_AUDIT_LAST_UPDATE_TIMESTAMP]"
+                      dataType="dbTimeStamp"
+                      name="DB_AUDIT_LAST_UPDATE_TIMESTAMP" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].ExternalColumns[DB_AUDIT_LAST_UPDATE_USERID]"
+                      codePage="65001"
+                      dataType="str"
+                      length="30"
+                      name="DB_AUDIT_LAST_UPDATE_USERID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].ExternalColumns[FILE_READ_DATE]"
+                      dataType="date"
+                      name="FILE_READ_DATE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].ExternalColumns[FILENAME]"
+                      codePage="65001"
+                      dataType="str"
+                      length="100"
+                      name="FILENAME" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].ExternalColumns[TRK_CREATE_TIMESTAMP]"
+                      dataType="dbTimeStamp"
+                      name="TRK_CREATE_TIMESTAMP" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].ExternalColumns[TRK_CREATE_USER_DIRECTORY]"
+                      codePage="65001"
+                      dataType="str"
+                      length="6"
+                      name="TRK_CREATE_USER_DIRECTORY" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].ExternalColumns[TRK_CREATE_USER_GUID]"
+                      codePage="65001"
+                      dataType="str"
+                      length="32"
+                      name="TRK_CREATE_USER_GUID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].ExternalColumns[TRK_CREATE_USERID]"
+                      codePage="65001"
+                      dataType="str"
+                      length="30"
+                      name="TRK_CREATE_USERID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].ExternalColumns[TRK_LAST_UPDATE_TIMESTAMP]"
+                      dataType="dbTimeStamp"
+                      name="TRK_LAST_UPDATE_TIMESTAMP" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].ExternalColumns[TRK_LAST_UPDATE_USER_DIRECTORY]"
+                      codePage="65001"
+                      dataType="str"
+                      length="6"
+                      name="TRK_LAST_UPDATE_USER_DIRECTORY" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].ExternalColumns[TRK_LAST_UPDATE_USER_GUID]"
+                      codePage="65001"
+                      dataType="str"
+                      length="32"
+                      name="TRK_LAST_UPDATE_USER_GUID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output].ExternalColumns[TRK_LAST_UPDATE_USERID]"
+                      codePage="65001"
+                      dataType="str"
+                      length="30"
+                      name="TRK_LAST_UPDATE_USERID" />
+                  </externalMetadataColumns>
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task.Paths[Default Output]"
+              endId="Package\Data Flow Task\Data Anonymizer.Inputs[Primary Input]"
+              name="Default Output"
+              startId="Package\Data Flow Task\Premium ADO NET Source.Outputs[Default Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Default Output1]"
+              endId="Package\Data Flow Task\Premium ADO NET Destination.Inputs[Primary Input]"
+              name="Default Output"
+              startId="Package\Data Flow Task\Data Anonymizer.Outputs[Default Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Data Profiling Task"
+      DTS:CreationName="Microsoft.DataProfilingTask"
+      DTS:Description="Data Profiling Task"
+      DTS:DTSID="{F6927DF1-4324-46C8-8B30-F3CFAFE3EDA5}"
+      DTS:ExecutableType="Microsoft.DataProfilingTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Profiling Task"
+      DTS:TaskContact="Data Profiling Task; Microsoft Corporation; SQL Server 2019; (c) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0"
+        DTS:LoggingMode="1" />
+      <DTS:ObjectData>
+        <DataProfilingTaskData
+          Destination="sample.xml 1"
+          OverwriteDestination="True">
+          <ProfileInput><![CDATA[<?xml version="1.0" encoding="utf-16"?>
+<DataProfile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/sqlserver/2008/DataDebugger/">
+  <ProfileVersion>1.0</ProfileVersion>
+  <DataSources />
+  <DataProfileInput>
+    <ProfileMode>Exact</ProfileMode>
+    <Timeout>0</Timeout>
+    <Requests>
+      <CandidateKeyProfileRequest ID="KeyReq">
+        <DataSourceID>{0CC93186-76D4-41ED-B9D3-CCB3B1BCF2D0}</DataSourceID>
+        <Table Schema="dbo" Table="CIX_ACCIDENT_SUBMISSION" />
+        <KeyColumns>
+          <Column IsWildCard="true" />
+        </KeyColumns>
+        <ThresholdSetting>Specified</ThresholdSetting>
+        <KeyStrengthThreshold>0.95</KeyStrengthThreshold>
+        <VerifyOutputInFastMode>false</VerifyOutputInFastMode>
+        <MaxNumberOfViolations>100</MaxNumberOfViolations>
+      </CandidateKeyProfileRequest>
+      <ColumnLengthDistributionProfileRequest ID="LengthDistReq">
+        <DataSourceID>{0CC93186-76D4-41ED-B9D3-CCB3B1BCF2D0}</DataSourceID>
+        <Table Schema="dbo" Table="CIX_ACCIDENT_SUBMISSION" />
+        <Column IsWildCard="true" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+      </ColumnLengthDistributionProfileRequest>
+      <ColumnNullRatioProfileRequest ID="NullRatioReq">
+        <DataSourceID>{0CC93186-76D4-41ED-B9D3-CCB3B1BCF2D0}</DataSourceID>
+        <Table Schema="dbo" Table="CIX_ACCIDENT_SUBMISSION" />
+        <Column IsWildCard="true" />
+      </ColumnNullRatioProfileRequest>
+    </Requests>
+  </DataProfileInput>
+  <DataProfileOutput>
+    <Profiles />
+  </DataProfileOutput>
+</DataProfile>]]></ProfileInput>
+        </DataProfilingTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{E22F0999-5DBE-43F9-ABCE-9A86A3D2647F}"
+      DTS:From="Package\Data Flow Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Data Profiling Task" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="153.333333333334,42.6666666666667"
+          Id="Package\Data Flow Task"
+          TopLeft="44.3749993387608,28.7192987736356" />
+        <NodeLayout
+          Size="169.333333333334,42.6666666666667"
+          Id="Package\Data Profiling Task"
+          TopLeft="54.9999991804361,125.894739211761" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="121.041666005427,71.3859654403022">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="18.6249998416754,54.5087737714592"
+              Start="0,0"
+              End="18.6249998416754,47.0087737714592">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.2543868857296" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.2543868857296"
+                    Point2="0,27.2543868857296"
+                    Point3="4,27.2543868857296" />
+                  <mssgle:LineSegment
+                    End="14.6249998416754,27.2543868857296" />
+                  <mssgle:CubicBezierSegment
+                    Point1="14.6249998416754,27.2543868857296"
+                    Point2="18.6249998416754,27.2543868857296"
+                    Point3="18.6249998416754,31.2543868857296" />
+                  <mssgle:LineSegment
+                    End="18.6249998416754,47.0087737714592" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="229.333333333334,42.6666666666667"
+          Id="Package\Data Flow Task\Premium ADO NET Destination"
+          TopLeft="171.874997438863,184.052635043282" />
+        <NodeLayout
+          Size="161.333333333334,42.6666666666667"
+          Id="Package\Data Flow Task\Data Anonymizer"
+          TopLeft="209.374996880069,78.6842120073509" />
+        <NodeLayout
+          Size="209.333333333334,42.6666666666667"
+          Id="Package\Data Flow Task\Premium ADO NET Source"
+          TopLeft="189.999997168779,1.36842107838862" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Default Output1]"
+          TopLeft="288.291663826133,121.350878674018">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,62.701756369264"
+              Start="0,0"
+              End="0,55.201756369264">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,55.201756369264" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Default Output]"
+          TopLeft="292.354163691091,44.0350877450553">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34.6491242622956"
+              Start="0,0"
+              End="0,27.1491242622956">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.1491242622956" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

@@ -1,0 +1,339 @@
+<?xml version="1.0"?>
+<DataProfile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/sqlserver/2008/DataDebugger/">
+  <ProfileVersion>1.0</ProfileVersion>
+  <DataSources>
+    <DtsDataSource ID="{6012270B-0A39-4239-A48B-C7EF4002A7E9}" Name="(DESCRIPTION=(ADDRESS = (PROTOCOL = TCP)(HOST = kangaroo.th.gov.bc.ca)(PORT = 20208))(CONNECT_DATA = (SERVICE_NAME=DBA03))).APP_CIX_MASKED">
+      <DtsConnectionManagerID>(DESCRIPTION=(ADDRESS = (PROTOCOL = TCP)(HOST = kangaroo.th.gov.bc.ca)(PORT = 20208))(CONNECT_DATA = (SERVICE_NAME=DBA03))).APP_CIX_MASKED</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{0CC93186-76D4-41ED-B9D3-CCB3B1BCF2D0}" Name="(localdb)\MSSQLLocalDB.master">
+      <DtsConnectionManagerID>(localdb)\MSSQLLocalDB.master</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{51C1FBC6-7C58-4DCA-B08D-503007347C8F}" Name="localhost\MSSQLSERVER01.CIX">
+      <DtsConnectionManagerID>localhost\MSSQLSERVER01.CIX</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{BA598959-E1DD-4E86-84C1-F6961AC07E3F}" Name="log.txt">
+      <DtsConnectionManagerID>log.txt</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{A67CBA15-188B-4830-9476-9B77714B9E27}" Name="sample.xml">
+      <DtsConnectionManagerID>sample.xml</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{59EB6AEE-E5E0-4C82-9448-AECFF65AFC74}" Name="sample.xml 1">
+      <DtsConnectionManagerID>sample.xml 1</DtsConnectionManagerID>
+    </DtsDataSource>
+  </DataSources>
+  <DataProfileInput>
+    <ProfileMode>Exact</ProfileMode>
+    <Timeout>0</Timeout>
+    <Requests>
+      <CandidateKeyProfileRequest ID="KeyReq">
+        <DataSourceID>{0CC93186-76D4-41ED-B9D3-CCB3B1BCF2D0}</DataSourceID>
+        <Table Schema="dbo" Table="CIX_ACCIDENT_SUBMISSION" />
+        <KeyColumns>
+          <Column IsWildCard="true" />
+        </KeyColumns>
+        <ThresholdSetting>Specified</ThresholdSetting>
+        <KeyStrengthThreshold>0.95</KeyStrengthThreshold>
+        <VerifyOutputInFastMode>false</VerifyOutputInFastMode>
+        <MaxNumberOfViolations>100</MaxNumberOfViolations>
+      </CandidateKeyProfileRequest>
+      <ColumnLengthDistributionProfileRequest ID="LengthDistReq">
+        <DataSourceID>{0CC93186-76D4-41ED-B9D3-CCB3B1BCF2D0}</DataSourceID>
+        <Table Schema="dbo" Table="CIX_ACCIDENT_SUBMISSION" />
+        <Column IsWildCard="true" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+      </ColumnLengthDistributionProfileRequest>
+      <ColumnNullRatioProfileRequest ID="NullRatioReq">
+        <DataSourceID>{0CC93186-76D4-41ED-B9D3-CCB3B1BCF2D0}</DataSourceID>
+        <Table Schema="dbo" Table="CIX_ACCIDENT_SUBMISSION" />
+        <Column IsWildCard="true" />
+      </ColumnNullRatioProfileRequest>
+    </Requests>
+  </DataProfileInput>
+  <DataProfileOutput>
+    <Profiles>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
+        <DataSourceID>{0CC93186-76D4-41ED-B9D3-CCB3B1BCF2D0}</DataSourceID>
+        <Table DataSource="(localdb)\MSSQLLocalDB" Database="master" Schema="dbo" Table="CIX_ACCIDENT_SUBMISSION" RowCount="4904" />
+        <Column Name="CHECKSUM" SqlDbType="VarChar" MaxLength="32" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>0</MinLength>
+        <MaxLength>16</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>0</Length>
+            <Count>32</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>9</Length>
+            <Count>16</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>15</Length>
+            <Count>40</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>3</Length>
+            <Count>12</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>12</Length>
+            <Count>8</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>6</Length>
+            <Count>16</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>7</Length>
+            <Count>20</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>1</Length>
+            <Count>20</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>10</Length>
+            <Count>20</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>4</Length>
+            <Count>4</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>13</Length>
+            <Count>12</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>5</Length>
+            <Count>20</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>16</Length>
+            <Count>4620</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>2</Length>
+            <Count>8</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>14</Length>
+            <Count>16</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>8</Length>
+            <Count>40</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
+        <DataSourceID>{0CC93186-76D4-41ED-B9D3-CCB3B1BCF2D0}</DataSourceID>
+        <Table DataSource="(localdb)\MSSQLLocalDB" Database="master" Schema="dbo" Table="CIX_ACCIDENT_SUBMISSION" RowCount="4904" />
+        <Column Name="DB_AUDIT_CREATE_USERID" SqlDbType="VarChar" MaxLength="30" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>20</MinLength>
+        <MaxLength>20</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>20</Length>
+            <Count>4904</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
+        <DataSourceID>{0CC93186-76D4-41ED-B9D3-CCB3B1BCF2D0}</DataSourceID>
+        <Table DataSource="(localdb)\MSSQLLocalDB" Database="master" Schema="dbo" Table="CIX_ACCIDENT_SUBMISSION" RowCount="4904" />
+        <Column Name="DB_AUDIT_LAST_UPDATE_USERID" SqlDbType="VarChar" MaxLength="30" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>20</MinLength>
+        <MaxLength>20</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>20</Length>
+            <Count>4904</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
+        <DataSourceID>{0CC93186-76D4-41ED-B9D3-CCB3B1BCF2D0}</DataSourceID>
+        <Table DataSource="(localdb)\MSSQLLocalDB" Database="master" Schema="dbo" Table="CIX_ACCIDENT_SUBMISSION" RowCount="4904" />
+        <Column Name="FILENAME" SqlDbType="VarChar" MaxLength="100" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>27</MinLength>
+        <MaxLength>27</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>27</Length>
+            <Count>4904</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
+        <DataSourceID>{0CC93186-76D4-41ED-B9D3-CCB3B1BCF2D0}</DataSourceID>
+        <Table DataSource="(localdb)\MSSQLLocalDB" Database="master" Schema="dbo" Table="CIX_ACCIDENT_SUBMISSION" RowCount="4904" />
+        <Column Name="TRK_CREATE_USER_DIRECTORY" SqlDbType="VarChar" MaxLength="6" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>6</MinLength>
+        <MaxLength>6</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>6</Length>
+            <Count>4904</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
+        <DataSourceID>{0CC93186-76D4-41ED-B9D3-CCB3B1BCF2D0}</DataSourceID>
+        <Table DataSource="(localdb)\MSSQLLocalDB" Database="master" Schema="dbo" Table="CIX_ACCIDENT_SUBMISSION" RowCount="4904" />
+        <Column Name="TRK_CREATE_USERID" SqlDbType="VarChar" MaxLength="30" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>20</MinLength>
+        <MaxLength>20</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>20</Length>
+            <Count>4904</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
+        <DataSourceID>{0CC93186-76D4-41ED-B9D3-CCB3B1BCF2D0}</DataSourceID>
+        <Table DataSource="(localdb)\MSSQLLocalDB" Database="master" Schema="dbo" Table="CIX_ACCIDENT_SUBMISSION" RowCount="4904" />
+        <Column Name="TRK_LAST_UPDATE_USER_DIRECTORY" SqlDbType="VarChar" MaxLength="6" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>6</MinLength>
+        <MaxLength>6</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>6</Length>
+            <Count>4904</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
+        <DataSourceID>{0CC93186-76D4-41ED-B9D3-CCB3B1BCF2D0}</DataSourceID>
+        <Table DataSource="(localdb)\MSSQLLocalDB" Database="master" Schema="dbo" Table="CIX_ACCIDENT_SUBMISSION" RowCount="4904" />
+        <Column Name="TRK_LAST_UPDATE_USERID" SqlDbType="VarChar" MaxLength="30" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>20</MinLength>
+        <MaxLength>20</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>20</Length>
+            <Count>4904</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{0CC93186-76D4-41ED-B9D3-CCB3B1BCF2D0}</DataSourceID>
+        <Table DataSource="(localdb)\MSSQLLocalDB" Database="master" Schema="dbo" Table="CIX_ACCIDENT_SUBMISSION" RowCount="4904" />
+        <Column Name="ACCIDENT_SUBMISSION_ID" SqlDbType="Decimal" MaxLength="0" Precision="38" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{0CC93186-76D4-41ED-B9D3-CCB3B1BCF2D0}</DataSourceID>
+        <Table DataSource="(localdb)\MSSQLLocalDB" Database="master" Schema="dbo" Table="CIX_ACCIDENT_SUBMISSION" RowCount="4904" />
+        <Column Name="CHECKSUM" SqlDbType="VarChar" MaxLength="32" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{0CC93186-76D4-41ED-B9D3-CCB3B1BCF2D0}</DataSourceID>
+        <Table DataSource="(localdb)\MSSQLLocalDB" Database="master" Schema="dbo" Table="CIX_ACCIDENT_SUBMISSION" RowCount="4904" />
+        <Column Name="CONCURRENCY_CONTROL_NUMBER" SqlDbType="Decimal" MaxLength="0" Precision="38" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{0CC93186-76D4-41ED-B9D3-CCB3B1BCF2D0}</DataSourceID>
+        <Table DataSource="(localdb)\MSSQLLocalDB" Database="master" Schema="dbo" Table="CIX_ACCIDENT_SUBMISSION" RowCount="4904" />
+        <Column Name="DB_AUDIT_CREATE_TIMESTAMP" SqlDbType="DateTime" MaxLength="0" Precision="255" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{0CC93186-76D4-41ED-B9D3-CCB3B1BCF2D0}</DataSourceID>
+        <Table DataSource="(localdb)\MSSQLLocalDB" Database="master" Schema="dbo" Table="CIX_ACCIDENT_SUBMISSION" RowCount="4904" />
+        <Column Name="DB_AUDIT_CREATE_USERID" SqlDbType="VarChar" MaxLength="30" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{0CC93186-76D4-41ED-B9D3-CCB3B1BCF2D0}</DataSourceID>
+        <Table DataSource="(localdb)\MSSQLLocalDB" Database="master" Schema="dbo" Table="CIX_ACCIDENT_SUBMISSION" RowCount="4904" />
+        <Column Name="DB_AUDIT_LAST_UPDATE_TIMESTAMP" SqlDbType="DateTime" MaxLength="0" Precision="255" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{0CC93186-76D4-41ED-B9D3-CCB3B1BCF2D0}</DataSourceID>
+        <Table DataSource="(localdb)\MSSQLLocalDB" Database="master" Schema="dbo" Table="CIX_ACCIDENT_SUBMISSION" RowCount="4904" />
+        <Column Name="DB_AUDIT_LAST_UPDATE_USERID" SqlDbType="VarChar" MaxLength="30" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{0CC93186-76D4-41ED-B9D3-CCB3B1BCF2D0}</DataSourceID>
+        <Table DataSource="(localdb)\MSSQLLocalDB" Database="master" Schema="dbo" Table="CIX_ACCIDENT_SUBMISSION" RowCount="4904" />
+        <Column Name="FILE_READ_DATE" SqlDbType="DateTime" MaxLength="0" Precision="255" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{0CC93186-76D4-41ED-B9D3-CCB3B1BCF2D0}</DataSourceID>
+        <Table DataSource="(localdb)\MSSQLLocalDB" Database="master" Schema="dbo" Table="CIX_ACCIDENT_SUBMISSION" RowCount="4904" />
+        <Column Name="FILENAME" SqlDbType="VarChar" MaxLength="100" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{0CC93186-76D4-41ED-B9D3-CCB3B1BCF2D0}</DataSourceID>
+        <Table DataSource="(localdb)\MSSQLLocalDB" Database="master" Schema="dbo" Table="CIX_ACCIDENT_SUBMISSION" RowCount="4904" />
+        <Column Name="TRK_CREATE_TIMESTAMP" SqlDbType="DateTime" MaxLength="0" Precision="255" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{0CC93186-76D4-41ED-B9D3-CCB3B1BCF2D0}</DataSourceID>
+        <Table DataSource="(localdb)\MSSQLLocalDB" Database="master" Schema="dbo" Table="CIX_ACCIDENT_SUBMISSION" RowCount="4904" />
+        <Column Name="TRK_CREATE_USER_DIRECTORY" SqlDbType="VarChar" MaxLength="6" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{0CC93186-76D4-41ED-B9D3-CCB3B1BCF2D0}</DataSourceID>
+        <Table DataSource="(localdb)\MSSQLLocalDB" Database="master" Schema="dbo" Table="CIX_ACCIDENT_SUBMISSION" RowCount="4904" />
+        <Column Name="TRK_CREATE_USER_GUID" SqlDbType="VarChar" MaxLength="32" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>4904</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{0CC93186-76D4-41ED-B9D3-CCB3B1BCF2D0}</DataSourceID>
+        <Table DataSource="(localdb)\MSSQLLocalDB" Database="master" Schema="dbo" Table="CIX_ACCIDENT_SUBMISSION" RowCount="4904" />
+        <Column Name="TRK_CREATE_USERID" SqlDbType="VarChar" MaxLength="30" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{0CC93186-76D4-41ED-B9D3-CCB3B1BCF2D0}</DataSourceID>
+        <Table DataSource="(localdb)\MSSQLLocalDB" Database="master" Schema="dbo" Table="CIX_ACCIDENT_SUBMISSION" RowCount="4904" />
+        <Column Name="TRK_LAST_UPDATE_TIMESTAMP" SqlDbType="DateTime" MaxLength="0" Precision="255" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{0CC93186-76D4-41ED-B9D3-CCB3B1BCF2D0}</DataSourceID>
+        <Table DataSource="(localdb)\MSSQLLocalDB" Database="master" Schema="dbo" Table="CIX_ACCIDENT_SUBMISSION" RowCount="4904" />
+        <Column Name="TRK_LAST_UPDATE_USER_DIRECTORY" SqlDbType="VarChar" MaxLength="6" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{0CC93186-76D4-41ED-B9D3-CCB3B1BCF2D0}</DataSourceID>
+        <Table DataSource="(localdb)\MSSQLLocalDB" Database="master" Schema="dbo" Table="CIX_ACCIDENT_SUBMISSION" RowCount="4904" />
+        <Column Name="TRK_LAST_UPDATE_USER_GUID" SqlDbType="VarChar" MaxLength="32" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>4904</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{0CC93186-76D4-41ED-B9D3-CCB3B1BCF2D0}</DataSourceID>
+        <Table DataSource="(localdb)\MSSQLLocalDB" Database="master" Schema="dbo" Table="CIX_ACCIDENT_SUBMISSION" RowCount="4904" />
+        <Column Name="TRK_LAST_UPDATE_USERID" SqlDbType="VarChar" MaxLength="30" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+    </Profiles>
+  </DataProfileOutput>
+</DataProfile>
