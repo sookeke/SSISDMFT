@@ -20,5 +20,5 @@ steps:
 - task: SSISBuild@1
   inputs:
     projectPath: 'SSISDMFT/Integration Services Project5/'
-    stripSensitive: false
+    stripSensitive: true
     outputPath: '$(Build.ArtifactStagingDirectory)'
