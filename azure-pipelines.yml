@@ -30,6 +30,9 @@ steps:
        Write-Host "Download complete"
       #install download package
       .\SSIS.exe /Q /C /T:'$(Build.ArtifactStagingDirectory)\SSIS'
+      
+      #add repo to Path
+      set PATH=%PATH%;'$(Build.ArtifactStagingDirectory)\SSIS'
       start-sleep -s 15
       ls '$(Build.ArtifactStagingDirectory)\SSIS'
 - task: PowerShell@2
@@ -38,8 +41,8 @@ steps:
     script: |
       # Write your PowerShell commands here.
       
-      cd D:\a\1\a\SSIS
-      ls
+      ls D:\a\1\a\SSIS
+      SSISBuild.exe -help  
 - task: SSISBuild@1
   inputs:
     projectPath: './Integration Services Project5/'
