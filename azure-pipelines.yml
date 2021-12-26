@@ -31,6 +31,7 @@ steps:
        Write-Host "Download complete"
       #install download package
       .\SSIS.exe /Q /C /T:'$(Build.ArtifactStagingDirectory)\SSIS'
+      ls
 
 - task: SSISBuild@1
   inputs:
