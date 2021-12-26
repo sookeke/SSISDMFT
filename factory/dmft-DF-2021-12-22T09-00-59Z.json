@@ -1,0 +1,9 @@
+{
+	"name": "dmft-DF-2021-12-22T09-00-59Z",
+	"location": "CanadaCentral",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "90dd501e-0914-42b9-aa73-876b71a6d138",
+		"tenantId": "6fdb5200-3d0d-4a8a-b036-d3685e359adc"
+	}
+}
