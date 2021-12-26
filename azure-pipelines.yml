@@ -30,7 +30,7 @@ steps:
       Invoke-WebRequest -Uri "http://aka.ms/SSISDevOpsTools" -OutFile SSIS.exe
        Write-Host "Download complete"
       #install download package
-      .\SSIS.exe /Q /C /T:'$(Build.ArtifactStagingDirectory)\SSIS'
+      .\SSIS.exe /Q /C /T:'D:\a\1\a\SSIS\SSIS'
       ls
 
 - task: SSISBuild@1
