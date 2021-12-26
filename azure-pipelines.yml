@@ -17,22 +17,28 @@ variables:
 steps:
 - task: NuGetToolInstaller@1
 - task: PowerShell@2
+  displayName: Install dependencies
   inputs:
     targetType: 'inline'
     script: |
-      # Write your PowerShell commands here.
-      
-      Write-Host "Hello World"
+      # Create directory for install dependencies
       ls
+      cd '$(Build.ArtifactStagingDirectory)'
+      mkdir SSIS
+      # download and install SSIS build and deploy package
+      cd mkdir
+      Invoke-WebRequest -Uri "http://aka.ms/SSISDevOpsTools" -OutFile SSIS.exe
+      #install download package
+      .\SSIS\SSIS.exe /Q /C /T:'$(Build.ArtifactStagingDirectory)\SSIS'
 
 - task: SSISBuild@1
   inputs:
     projectPath: './Integration Services Project5/'
     stripSensitive: false
-    outputPath: '$(Build.ArtifactStagingDirectory)'
+    outputPath: '$(Build.ArtifactStagingDirectory)/SSISDMFT'
 - task: SSISDeploy@1
   inputs:
-    sourcePath: '$(Build.ArtifactStagingDirectory)\Integration Services Project5.ispac'
+    sourcePath: '$(Build.ArtifactStagingDirectory)\SSISDMFT\Integration Services Project5.ispac'
     destinationType: 'ssisdb'
     destinationServer: 'localhost\MSSQLSERVER01'
     destinationPath: '/SSISDB/Cix'
