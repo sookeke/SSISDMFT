@@ -29,7 +29,7 @@ steps:
       Invoke-WebRequest -Uri "http://aka.ms/SSISDevOpsTools" -OutFile SSIS.exe
        Write-Host "Download complete"
       #install download package
-      .\SSIS.exe /Q /C /T:D:\a\1\a\SSIS\SSIS
+      .\SSIS.exe /Q /C /T:'$(Build.ArtifactStagingDirectory)\SSIS'
       ls
 - task: PowerShell@2
   inputs:
@@ -37,7 +37,7 @@ steps:
     script: |
       # Write your PowerShell commands here.
       
-      cd D:\a\1\a\SSIS\SSIS
+      cd D:\a\1\a\SSIS
       ls
 - task: SSISBuild@1
   inputs:
