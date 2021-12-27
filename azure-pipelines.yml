@@ -50,7 +50,7 @@ steps:
       # Write your PowerShell commands here.
       
       ls D:\a\1\a\SSIS
-      SSISBuild.exe -help  
+      .\'$(Build.ArtifactStagingDirectory)\SSIS\'SSISBuild.exe -help  
 - task: SSISBuild@1
   inputs:
     projectPath: './Integration Services Project5/'
