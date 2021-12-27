@@ -41,8 +41,8 @@ steps:
     script: |
       # Write your PowerShell commands here.
       
-      ls D:\a\1\a\SSIS
-      SSISBuild -help  
+      SSISBuild -help
+      dtexec -help  
 - task: SSISBuild@1
   inputs:
     projectPath: './Integration Services Project5/'
