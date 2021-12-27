@@ -32,11 +32,7 @@ steps:
       .\SSIS.exe /Q /C /T:'$(Build.ArtifactStagingDirectory)\SSIS'
       
       #add repo to Path
-      #set PATH=%PATH%;'$(Build.ArtifactStagingDirectory)\SSIS'
-      setx /M path "%path%;'$(Build.ArtifactStagingDirectory)\SSIS'"
       start-sleep -s 15
-      ls '$(Build.ArtifactStagingDirectory)\SSIS'
-      #setx /M path "%path%;'$(Build.ArtifactStagingDirectory)\SSIS'"
       Write-Host "##vso[task.prependpath]$(Build.ArtifactStagingDirectory)\SSIS\"
       $Env:Path
 - task: PowerShell@2
