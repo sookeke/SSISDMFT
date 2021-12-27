@@ -37,11 +37,7 @@ steps:
       start-sleep -s 15
       ls '$(Build.ArtifactStagingDirectory)\SSIS'
       #setx /M path "%path%;'$(Build.ArtifactStagingDirectory)\SSIS'"
-      $PATH = [Environment]::GetEnvironmentVariable("PATH", "Machine")
-      $ssis_path = '$(Build.ArtifactStagingDirectory)\SSIS'
-      if( $PATH -notlike "*"+$ssis_path+"*" ){
-        [Environment]::SetEnvironmentVariable("PATH", "$PATH;$ssis_path", "Machine")
-      }
+      Write-Host "##vso[task.prependpath]$(Build.ArtifactStagingDirectory)\SSIS\"
       $Env:Path
 - task: PowerShell@2
   inputs:
@@ -50,7 +46,7 @@ steps:
       # Write your PowerShell commands here.
       
       ls D:\a\1\a\SSIS
-      .\'$(Build.ArtifactStagingDirectory)\SSIS\'SSISBuild.exe -help  
+      SSISBuild -help  
 - task: SSISBuild@1
   inputs:
     projectPath: './Integration Services Project5/'
