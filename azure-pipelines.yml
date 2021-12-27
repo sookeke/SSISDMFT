@@ -39,7 +39,7 @@ steps:
       #setx /M path "%path%;'$(Build.ArtifactStagingDirectory)\SSIS'"
       $PATH = [Environment]::GetEnvironmentVariable("PATH", "Machine")
       $ssis_path = '$(Build.ArtifactStagingDirectory)\SSIS'
-      if( $PATH -notlike "*"+$xampp_path+"*" ){
+      if( $PATH -notlike "*"+$ssis_path+"*" ){
         [Environment]::SetEnvironmentVariable("PATH", "$PATH;$ssis_path", "Machine")
       }
       $Env:Path
